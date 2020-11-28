@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Museum Tickets Application</string>
     <string name="header_name">Museums Tickets</string>
+    <string name="adult_price">Adult</string>
+    <string name="senior_price">Senior</string>
+    <string name="student_price">Student</string>
+    <string-array name="num_tickets">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>
