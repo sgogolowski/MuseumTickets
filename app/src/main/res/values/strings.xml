@@ -4,7 +4,18 @@
     <string name="adult_price">Adult</string>
     <string name="senior_price">Senior</string>
     <string name="student_price">Student</string>
+    <string name="gen_ticket_price">Calculate Ticket Cost</string>
+    <string name="ticket_price">Ticket Price</string>
+    <string name="sales_tax">Sales Tax</string>
+    <string name="total_price">Total Price</string>
+    <string-array name="museums">
+        <item>Liberty Science Center</item>
+        <item>Montclair Art Museum</item>
+        <item>Franklin Mineral Museum</item>
+        <item>Newark Museum of Art</item>
+    </string-array>
     <string-array name="num_tickets">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
