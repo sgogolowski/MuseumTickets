@@ -115,7 +115,7 @@ public class SecondActivity extends AppCompatActivity {
 
         double tickets_price = (adultTickets * adultPrice) + (seniorTickets * seniorPrice) + (studentTickets * studentPrice);
         ticketsPrice.setText(String.format("$%.2f", tickets_price));
-        double sales_tax = (double) tickets_price * 0.0625;
+        double sales_tax = (double) tickets_price * 0.06625;
         salesTax.setText(String.format("$%.2f", sales_tax));
         totalPrice.setText(String.format("$%.2f", tickets_price + sales_tax));
 
