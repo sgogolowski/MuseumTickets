@@ -11,9 +11,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+/**
+ * Second Activity for the museum tickets application.
+ * Initializes the view with the appropriate ticket prices and image for the selected museum from
+ * the previous activity. Then it prompts the user to select the amount of tickets for the appropriate museum
+ * and calculates the total cost and sales tax.
+ * @authors Szymon Gogolowski, James Piedilato
 
+ */
 public class SecondActivity extends AppCompatActivity {
+    /**
+     * Overridden onCreate method that sets up the view of the activity.
+     * Sets the appropriate image and ticket prices of the museums according to the selected museum
+     * from the previous activity
 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -39,12 +51,22 @@ public class SecondActivity extends AppCompatActivity {
         showToast(this);
     }
 
+    /**
+     * Method to show the user a toast message.
+     * Shows the user a toast message about the maximum tickets possible for each age group.
+     * @param view is the current view
 
+     */
     public void showToast(SecondActivity view){
-        Toast maxTickets = Toast.makeText(this, "Maximum of 5 Tickets for each!", Toast.LENGTH_SHORT);
+        Toast maxTickets = Toast.makeText(this, R.string.toast, Toast.LENGTH_SHORT);
         maxTickets.show();
     }
+    /**
+     * Helper method to initialize the text fields to display the correct ticket price for the
+     * selected museum.
+     * @param museum is a string representation of the selected museum
 
+     */
     private void setPrice(String museum){
         TextView adult = (TextView) findViewById(R.id.adultPrice);
         TextView senior = (TextView) findViewById(R.id.seniorPrice);
@@ -52,30 +74,34 @@ public class SecondActivity extends AppCompatActivity {
 
         switch (museum) {
             case "Liberty Science Center":
-                adult.setText("$24.99");
-                student.setText("$19.99");
-                senior.setText("$17.99");
+                adult.setText(R.string.lcs_adult);
+                student.setText(R.string.lcs_student);
+                senior.setText(R.string.lcs_senior);
                 break;
             case "Newark Museum of Art":
-                adult.setText("$15");
-                student.setText("$8");
-                senior.setText("$8");
+                adult.setText(R.string.nma_adult);
+                student.setText(R.string.nma_student);
+                senior.setText(R.string.nma_senior);
                 break;
             case "Franklin Mineral Museum":
-                adult.setText("$15");
-                student.setText("$12");
-                senior.setText("$14");
+                adult.setText(R.string.fmm_adult);
+                student.setText(R.string.fmm_student);
+                senior.setText(R.string.fmm_senior);
                 break;
             case "Montclair Art Museum":
-                adult.setText("$15");
-                student.setText("$12");
-                senior.setText("$12");
+                adult.setText(R.string.mam_adult);
+                student.setText(R.string.mam_student);
+                senior.setText(R.string.mam_senior);
                 break;
             default:
                 break;
         }
     }
+    /**
+     * Helper method to set the image view to the appropriate image of the selected museum.
+     * @param museum is the string representation of the selected museum
 
+     */
     private void setImage(String museum){
         ImageView museumImage = (ImageView) findViewById(R.id.museumImage);
         switch (museum){
@@ -96,6 +122,13 @@ public class SecondActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Event handler method to calculate the ticket costs and display them.
+     * Extract the cost of each ticket and the number of selected tickets by the user. Multiply them
+     * then calculate sales tax. Set the text view for the price to each corresponding field.
+     * @param view is the view to calculate ticket cost from
+
+     */
     public void calculateTicketCost(View view){
         Spinner adultSpinner = (Spinner) findViewById(R.id.spinner1);
         Spinner seniorSpinner = (Spinner) findViewById(R.id.spinner2);
@@ -115,12 +148,18 @@ public class SecondActivity extends AppCompatActivity {
 
         double tickets_price = (adultTickets * adultPrice) + (seniorTickets * seniorPrice) + (studentTickets * studentPrice);
         ticketsPrice.setText(String.format("$%.2f", tickets_price));
-        double sales_tax = (double) tickets_price * 0.0625;
+        double sales_tax = (double) tickets_price * 0.06625;
         salesTax.setText(String.format("$%.2f", sales_tax));
         totalPrice.setText(String.format("$%.2f", tickets_price + sales_tax));
 
     }
 
+    /**
+     * Event handler method to go the museum website when the user clicks on the museum image.
+     * Starts the 3rd activity implicitly.
+     * @param view is the view that the image is on.
+
+     */
     public void goToWebsite(View view){
         TextView title = (TextView) findViewById(R.id.museumTitle);
         switch ((String) title.getText()){

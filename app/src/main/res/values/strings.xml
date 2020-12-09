@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Museum Tickets Application</string>
-    <string name="header_name">Museums Tickets</string>
+    <string name="app_name">NJ Museums Application</string>
+    <string name="header_name">NJ Museums</string>
     <string name="adult_price">Adult</string>
     <string name="senior_price">Senior</string>
     <string name="student_price">Student</string>
@@ -8,6 +8,19 @@
     <string name="ticket_price">Ticket Price</string>
     <string name="sales_tax">Sales Tax</string>
     <string name="total_price">Total Price</string>
+    <string name="toast">Maximum of 5 Tickets for each!</string>
+    <string name="lcs_adult">$24.99</string>
+    <string name="lcs_senior">$17.99</string>
+    <string name="lcs_student">$19.99</string>
+    <string name="nma_adult">$15</string>
+    <string name="nma_senior">$8</string>
+    <string name="nma_student">$8</string>
+    <string name="fmm_adult">$15</string>
+    <string name="fmm_senior">$14</string>
+    <string name="fmm_student">$12</string>
+    <string name="mam_adult">$15</string>
+    <string name="mam_senior">$12</string>
+    <string name="mam_student">$12</string>
     <string-array name="museums">
         <item>Liberty Science Center</item>
         <item>Montclair Art Museum</item>
